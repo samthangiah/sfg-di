@@ -3,3 +3,11 @@ sam:
     username:  JMS Username
     password:  somepass
     dburl: Something
+    
+    
+---
+spring:
+    profile:  de
+sam:
+  jms:
+    username: JMS Username $$$$ German
