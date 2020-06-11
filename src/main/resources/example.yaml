@@ -1,0 +1,38 @@
+# This is a comment
+
+name: John
+
+names:  
+    -John
+    -Paul
+    -Ringo
+    
+pound_sign:  "$" 
+
+book:
+    authod: Joe Buck
+    publisher:  random house
+    
+truth:  yes
+
+another_truth:  True
+
+more_true:  true
+
+false:  no  #No,  false,  FALSE
+
+string_val: "This is it's quote"
+
+colon_sring: "my courses one two three"
+
+include_new_lines:  |
+    erwer werwer werwr
+    wer werwer werwer
+    werwe wer
+    werwer
+    
+ignore_new_lines: >
+  this is
+  just one long
+  string
+    

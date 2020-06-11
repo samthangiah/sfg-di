@@ -15,14 +15,18 @@ import sam.springwork.sfgdi.examplebeans.FakeJmsBroker;
 @Configuration
 //older multiple property source configuration
 //@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})  //look inside the properties files to resolve the string values
-@PropertySources({
+
+/*@PropertySources({
 	@PropertySource("classpath:datasource.properties"),
 	@PropertySource("classpath:jms.properties")
 })
+*/
+
 public class PropertyConfig {
 	
-	@Autowired
+	/*@Autowired
 	Environment env;
+	*/
 	
 	@Value("${sam.username}") //sam.username is how it is declared in the datasource.properties
 	String user;
@@ -63,11 +67,13 @@ public class PropertyConfig {
 		return fakeJmsBroker;
 	}
 
-	@Bean  //This will be reading the file
+	//Would not need this if Application.properties are used
+	/*@Bean  //This will be reading the file
 	public static PropertySourcesPlaceholderConfigurer properties() {
 		PropertySourcesPlaceholderConfigurer propertySourcesPlaceHolderConfigurer = new PropertySourcesPlaceholderConfigurer() ;
 		
 		return propertySourcesPlaceHolderConfigurer;
 	}
+	*/
 
 }
