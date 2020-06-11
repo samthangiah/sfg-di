@@ -11,6 +11,7 @@ import sam.springwork.sfgdi.controllers.PrimaryController;
 import sam.springwork.sfgdi.controllers.PropertyInjectedControllerSpr;
 import sam.springwork.sfgdi.controllers.SetterInjectedControllerSpr;
 import sam.springwork.sfgdi.examplebeans.FakeDataSource;
+import sam.springwork.sfgdi.examplebeans.FakeJmsBroker;
 import sam.springwork.sfgdi.controllers.ConstructorInjectedControllerSpr;
 
 @SpringBootApplication
@@ -34,6 +35,10 @@ public class SfgDiApplication {
 		//Finds the FakeDataSource @Bean in the PropertyConfig.java file
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 		System.out.println("FakeDataSource Username: "+fakeDataSource.getUser());
+		
+		//Finds the FakeDataSource @Bean in the PropertyConfig.java file
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+		System.out.println("FakeJMSBroker Username: "+fakeJmsBroker.getUser());
 		
 		/*
 		String greeting = myController.sayHello();
