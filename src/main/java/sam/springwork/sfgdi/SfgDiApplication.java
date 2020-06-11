@@ -10,6 +10,7 @@ import sam.springwork.sfgdi.controllers.I18nController;
 import sam.springwork.sfgdi.controllers.PrimaryController;
 import sam.springwork.sfgdi.controllers.PropertyInjectedControllerSpr;
 import sam.springwork.sfgdi.controllers.SetterInjectedControllerSpr;
+import sam.springwork.sfgdi.examplebeans.FakeDataSource;
 import sam.springwork.sfgdi.controllers.ConstructorInjectedControllerSpr;
 
 @SpringBootApplication
@@ -29,9 +30,16 @@ public class SfgDiApplication {
 		
 		//MyController is an example of how to do an injection without Spring
 		MyController myController = (MyController) ctx.getBean("myController");
+		
+		//Finds the FakeDataSource @Bean in the PropertyConfig.java file
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+		System.out.println("FakeDataSource Username: "+fakeDataSource.getUser());
+		
+		/*
 		String greeting = myController.sayHello();
 		System.out.println(greeting);
 		
+
 		//PrimaryController when there is more than one service that can be used
 		System.out.println("______Primary Greeting Spring Controller_");
 		PrimaryController primaryController = (PrimaryController) ctx.getBean("primaryController");
@@ -69,7 +77,6 @@ public class SfgDiApplication {
 		String i18nGreeting = i18nController.sayHello();
 		System.out.println(i18nGreeting);
 		
-		
 		//Pet Controller Assignment
 		System.out.println("______Pet Controller Spring Controller_");
 		System.out.println("The Best Pet is: ");
@@ -77,7 +84,7 @@ public class SfgDiApplication {
 		String bestPet = petController.whichPetIsTheBest();
 		System.out.println(bestPet);
 		
-		
+		*/
 		
 	}
 
